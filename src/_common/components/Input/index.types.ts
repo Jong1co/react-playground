@@ -21,63 +21,77 @@ export interface InputProps {
    *
    * @default 400
    */
-  fontWeight: CSSProperties["fontWeight"];
+  fontWeight?: CSSProperties["fontWeight"];
 
   /**
    * margin 상단을 설정합니다.
    *
    * @default 0
    */
-  marginTop: number;
+  marginTop?: number;
 
   /**
    * margin 우측을 설정합니다.
    *
    * @default 0
    */
-  marginRight: number;
+  marginRight?: number;
 
   /**
    * margin 하단을 설정합니다.
    *
    * @default 0
    */
-  marginBottom: number;
+  marginBottom?: number;
 
   /**
    * margin 좌측을 설정합니다.
    *
    * @default 0
    */
-  marginLeft: number;
+  marginLeft?: number;
 
   /**
    * padding 상단을 설정합니다.
    *
    * @default 0
    */
-  paddingTop: number;
+  paddingTop?: number;
 
   /**
    * padding 우측을 설정합니다.
    *
    * @default 0
    */
-  paddingRight: number;
+  paddingRight?: number;
 
   /**
    * padding 하단을 설정합니다.
    *
    * @default 0
    */
-  paddingBottom: number;
+  paddingBottom?: number;
 
   /**
    * padding 좌측을 설정합니다.
    *
    * @default 0
    */
-  paddingLeft: number;
+  paddingLeft?: number;
+
+  /**
+   * type을 설정합니다.
+   *
+   * @default 'text'
+   */
+  type?: React.HTMLInputTypeAttribute;
+
+  /**
+   * value를 설정합니다.
+   *
+   *
+   */
+  value?: React.InputHTMLAttributes<HTMLInputElement>;
 }
 
-export interface Props extends HTMLAttributes<HTMLElement>, InputProps {}
+export interface Props extends HTMLAttributes<HTMLInputElement>, InputProps {}

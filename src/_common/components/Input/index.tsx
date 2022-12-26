@@ -2,7 +2,7 @@ import React, { forwardRef } from "react";
 import * as Styled from "./index.styles";
 import { Props } from "./index.types";
 
-const index = forwardRef(
+const Input = forwardRef(
   (
     {
       borderRadius = 0,
@@ -17,6 +17,9 @@ const index = forwardRef(
       paddingBottom = 0,
       paddingLeft = 0,
       children,
+      type = "text",
+      value = "",
+      ...rest
     }: React.PropsWithChildren<Props>,
     forwardRef: React.Ref<HTMLInputElement>
   ) => {
@@ -33,11 +36,15 @@ const index = forwardRef(
         paddingLeft={paddingLeft}
         paddingRight={paddingRight}
         paddingTop={paddingTop}
-        ref={forwardRef}>
+        ref={forwardRef}
+        type={type}
+        value={value}
+        {...rest} // rest는 항상 마지막이여야 함
+      >
         {children}
       </Styled.Input>
     );
   }
 );
 
-export default index;
+export default Input;
