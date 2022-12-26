@@ -1,7 +1,7 @@
 import { AxiosResponse } from "axios";
 import { YoutubeClient } from "./youtubeClient";
 
-interface Youtube {
+export interface Youtube {
   search: (keyword: string) => Promise<AxiosResponse>;
 }
 
