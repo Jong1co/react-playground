@@ -3,7 +3,7 @@ import axios, { AxiosResponse } from "axios";
 type YoutubeParams = {
   params: {
     part: "snippet" | "id";
-    id: string;
+    id?: string;
     maxResults: number;
     type?: "video";
     q?: string;
@@ -11,7 +11,7 @@ type YoutubeParams = {
   };
 };
 
-interface YoutubeClient {
+export interface YoutubeClient {
   search: (params: YoutubeParams) => Promise<AxiosResponse>;
   videos: (params: YoutubeParams) => Promise<AxiosResponse>;
 }
