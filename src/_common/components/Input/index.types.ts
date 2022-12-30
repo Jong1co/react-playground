@@ -89,9 +89,9 @@ export interface InputProps {
   /**
    * value를 설정합니다.
    *
-   *
+   * @default ''
    */
-  value?: React.InputHTMLAttributes<HTMLInputElement>;
+  value?: string;
 }
 
 export interface Props extends HTMLAttributes<HTMLInputElement>, InputProps {}

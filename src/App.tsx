@@ -4,14 +4,17 @@ import Videos from "./pages/Videos";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { Outlet } from "react-router-dom";
 import SearchHeader from "./components/SearchHeader";
+import { YoutubeApiProvider } from "./context/YoutubeApiContext";
 
 const queryClient = new QueryClient();
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <SearchHeader />
-      <Outlet />
+      <YoutubeApiProvider>
+        <SearchHeader />
+        <Outlet />
+      </YoutubeApiProvider>
     </QueryClientProvider>
   );
 }

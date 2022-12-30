@@ -1,4 +1,5 @@
-import axios, { AxiosResponse } from "axios";
+import { YoutubeVideoListData } from "./youtube";
+import axios from "axios";
 
 type YoutubeParams = {
   params: {
@@ -12,8 +13,8 @@ type YoutubeParams = {
 };
 
 export interface YoutubeClient {
-  search: (params: YoutubeParams) => Promise<AxiosResponse>;
-  videos: (params: YoutubeParams) => Promise<AxiosResponse>;
+  search: (params: YoutubeParams) => Promise<YoutubeVideoListData>;
+  videos: (params: YoutubeParams) => Promise<YoutubeVideoListData>;
 }
 
 export class YoutubeClientImpl implements YoutubeClient {
