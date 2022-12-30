@@ -3,26 +3,17 @@ import userEvent from "@testing-library/user-event";
 import { create } from "react-test-renderer";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import { render, screen } from "@testing-library/react";
+import { withRouter } from "../../tests/utils";
 
 describe("search header", () => {
   it("renders correctly", () => {
-    const component = create(
-      <MemoryRouter>
-        <Routes>
-          <Route path='/' element={<SearchHeader />} />
-        </Routes>
-      </MemoryRouter>
-    );
+    const component = create(withRouter(<Route path='/' element={<SearchHeader />} />));
     expect(component.toJSON()).toMatchSnapshot();
   });
 
   it("'blackpink'로 이동 시 input에 출력", async () => {
     render(
-      <MemoryRouter initialEntries={["/videos/blackpink"]}>
-        <Routes>
-          <Route path='/videos/:keyword' element={<SearchHeader />} />
-        </Routes>
-      </MemoryRouter>
+      withRouter(<Route path='/videos/:keyword' element={<SearchHeader />} />, "/videos/blackpink")
     );
 
     expect(screen.getByDisplayValue("blackpink")).toBeInTheDocument();
@@ -31,15 +22,15 @@ describe("search header", () => {
   it("blackpink 검색 시 화면에 출력", () => {
     const searchKeyword = "hello-world";
     render(
-      <MemoryRouter initialEntries={["/"]}>
-        <Routes>
+      withRouter(
+        <>
           <Route path='/' element={<SearchHeader />} />
           <Route
             path='/videos/:keyword'
             element={<div>{`Search result for ${searchKeyword}`}</div>}
           />
-        </Routes>
-      </MemoryRouter>
+        </>
+      )
     );
     const searchButton = screen.getByRole("button");
     const searchInput = screen.getByRole("textbox");
