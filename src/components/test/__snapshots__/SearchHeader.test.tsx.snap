@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`search header renders correctly 1`] = `
+<header>
+  <form
+    action=""
+    onSubmit={[Function]}
+  >
+    <input
+      className="css-9egffe css-tmyvc7"
+      fontWeight={400}
+      onChange={[Function]}
+      placeholder="플레이스홀더"
+      type="text"
+      value=""
+    />
+    <button>
+      검색하기
+    </button>
+  </form>
+</header>
+`;
