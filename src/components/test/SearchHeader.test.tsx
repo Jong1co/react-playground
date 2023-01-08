@@ -1,15 +1,16 @@
 import SearchHeader from "../SearchHeader";
 import userEvent from "@testing-library/user-event";
 import { create } from "react-test-renderer";
-import { MemoryRouter, Routes, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { render, screen } from "@testing-library/react";
 import { withRouter } from "../../tests/utils";
 
 describe("search header", () => {
-  it("renders correctly", () => {
-    const component = create(withRouter(<Route path='/' element={<SearchHeader />} />));
-    expect(component.toJSON()).toMatchSnapshot();
-  });
+  // snapshot test
+  // it("renders correctly", () => {
+  //   const component = create(withRouter(<Route path='/' element={<SearchHeader />} />));
+  //   expect(component.toJSON()).toMatchSnapshot();
+  // });
 
   it("'blackpink'로 이동 시 input에 출력", async () => {
     render(

@@ -25,17 +25,15 @@ const SearchHeader = () => {
           placeholder='플레이스홀더'
           value={text}
           onChange={(e) => {
-            console.log(typeof (e.target as HTMLInputElement).value);
-
             setText((e.target as HTMLInputElement).value);
           }}
           borderRadius={10}
           border='3px solid pink'
           paddingLeft={10}
-          className={css`
-            width: 100px;
-            height: 500px;
-          `}
+          // className={css`
+          //   width: 100px;
+          //   height: 500px;
+          // `}
         />
         <button>검색하기</button>
       </form>
