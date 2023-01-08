@@ -5,6 +5,7 @@ import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Videos from "./pages/Videos";
 import VideoDetail from "./pages/VideoDetail";
+import AutoComplete from "./pages/autoComplete";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 const router = createBrowserRouter([
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
       { path: "/videos", element: <Videos /> },
       { path: "/videos/:keyword", element: <Videos /> },
       { path: "/videos/watch/:videoId", element: <VideoDetail /> },
+      { path: "/auto-complete", element: <AutoComplete /> },
     ],
   },
 ]);
